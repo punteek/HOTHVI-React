@@ -7,7 +7,7 @@
 ## Resources
 
 **Slides**
-* [HOTH 6 Intro to Web Development](https://tinyurl.com/hoth6-webdev)
+* [HOTH 6: Web Dev](https://tinyurl.com/hoth6-webdev)
 
 **ACM Membership Attendance Portal**
 * [Portal](https://members.uclaacm.com/login)
