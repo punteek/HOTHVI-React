@@ -1,8 +1,8 @@
-# Hackschool Session 5 Frontend: React
-**Location**: Covel 227  
-**Time**: 6:15–7:15pm, 7 November 2018
+# HOTH 6: Introduction to Web Development Workshop
+**Location**: Carnesale Venice
+**Time**: 10:30-11:15am, February 17, 2019
 
-**Teacher**: Galen Wong 
+**Teacher**: Tim Rediehs
 
 ## Resources
 
@@ -79,7 +79,7 @@ Once you define a component, you can easily reuse it.
 <!-- First Post -->
 <MyPostTag 
 	profile="profile1.png"
-	name="Galen"
+	name="Tim"
 	date="November 7 at 10:00AM"
 	text="I love react"
 	reax="Timothy Gu, Kevin Tan and 23 others"
@@ -89,7 +89,7 @@ Once you define a component, you can easily reuse it.
 <!-- Second Post -->
 <MyPostTag 
 	profile="profile2.png"
-	name="Tim"
+	name="Prateek"
 	date="November 7 at 6:00PM"
 	text="I love react"
 />
@@ -129,15 +129,15 @@ class Person {
 ```js
 // Inside a JavaScript Interactive Environment 
 // (e.g. Chrome DevTools)
-let me = new Person("Galen", 18);
+let me = new Person("Tim", 19);
 me
-// Output: Person {name: "Galen", age: 18}
+// Output: Person {name: "Tim", age: 19}
 me.sayHello();
-// Output: Hi, my name is Galen.
+// Output: Hi, my name is Tim.
 me.changeAge(19);
-// Output: Galen is now 19 yo.
+// Output: Tim is now 19 yo.
 me
-// Output: Person {name: "Galen", age: 19} 
+// Output: Person {name: "Tim", age: 19} 
 let berg = new Person("berg", 105);
 berg
 // Output: Person {name: "berg", age: 105}
@@ -298,7 +298,7 @@ After you save the file, your browser should refresh automatically.
 <img src="images/modified_react.png" width="500px">
 
 
-Fantasic. Let's go ahead and delete all the stuff in `App` and start our own app.
+Fantastic. Let's go ahead and delete all the stuff in `App` and start our own app.
 
 Let's make a twitter app for yourself. 
 
@@ -309,7 +309,7 @@ class Tweet extends React.Component {
   render() {
     return (
     <div>
-      <p> I love Rende. </p>
+      <p> I love BCafe. </p>
       <br/>
       <button>❤️</button>
     </div>
@@ -345,7 +345,7 @@ class Tweet extends React.Component {
 
 class App extends Component {
   render() {
-    return (<Tweet tweet="I love Rende. "/>);
+    return (<Tweet tweet="I love BCafe. "/>);
   }
 }
 ```
@@ -365,8 +365,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Tweet tweet="I love Rende. "/>
-        <Tweet tweet="I love Covel. "/>
+        <Tweet tweet="I love BCafe. "/>
+        <Tweet tweet="I love De Neve. "/>
         <Tweet tweet="I hate BPlate. "/>
       </div>
     );
@@ -379,7 +379,7 @@ We can actually uses an array to help us store these tweets.
 ```jsx
 class App extends Component {
   render() {
-    const tweets = ["I love Rende", "I hate BPlate"];
+    const tweets = ["I love BCafe", "I hate BPlate"];
     const lists = tweets.map((text) => <Tweet tweet={text} />);
     return (
       <div>
