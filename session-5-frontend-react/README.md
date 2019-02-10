@@ -7,7 +7,7 @@
 ## Resources
 
 **Slides**
-* [Session 5 Frontend: React](TODO)
+* [HOTH 6 Intro to Web Development](https://tinyurl.com/hoth6-webdev)
 
 **ACM Membership Attendance Portal**
 * [Portal](https://members.uclaacm.com/login)
