@@ -1,4 +1,4 @@
-# HOTH 6: Introduction to Web Development Workshop
+# HOTH 6: Intro to Frontend
 **Location**: Carnesale Venice
 **Time**: 10:30-11:15am, February 17, 2019
 
@@ -7,7 +7,7 @@
 ## Resources
 
 **Slides**
-* [HOTH 6: Web Dev](https://tinyurl.com/hoth6-webdev)
+* [HOTH 6: Frontend](https://tinyurl.com/hoth6-frontend)
 
 **ACM Membership Attendance Portal**
 * [Portal](https://members.uclaacm.com/login)
