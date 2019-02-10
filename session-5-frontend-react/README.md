@@ -119,7 +119,7 @@ class Person {
 ```
 
 * The `constructor` function is a function called when we create a new *instance* of a class. An instance is an object based on the format of the class definition.
-* `constructor` usually defines the proterties of instance within the class too.
+* `constructor` usually defines the properties of instance within the class too.
 * `this.name` and `this.age` are both properties in both instances of class `Person` 
 * `sayHello` and `changeAge` are both function within the instances. 
 * The `this` keyword specifies that it is referring to itself, the instance of the class.
