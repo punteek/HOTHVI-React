@@ -443,7 +443,7 @@ class Tweet extends React.Component {
     this.state = {
       numLike: 0
     };
-    this.buttonOnClick = () => { this.incrementLike(); };
+    this.incrementLike = this.incrementLike.bind(this);
   }
 
   incrementLike() {
@@ -459,7 +459,7 @@ class Tweet extends React.Component {
     return (
       <div>
         <h2>{this.props.tweet}</h2>
-        <button onClick={this.buttonOnClick}>❤️ {numLike} </button>
+        <button onClick={this.incrementLike}>❤️ {numLike} </button>
       </div>
     );
   }
@@ -470,9 +470,8 @@ There are 3 things that we changed.
 Instead of directly assigning a new object to `this.state`, 
 2. we used a function `this.setState` to help us set state.
 
-3. We set the `onClick` attributes to a function `this.buttonOnclick`.
-The function is being defined in the constructor `() => { this.incrementLike(); }`
-This means whenever the button is clicked. It will call a function which calls `incrementLike`.
+3. We set the `onClick` attributes to a function `this.incrementLike`.
+4. We call `bind` on `incrementLike` in the constructor.  We do this for handler functions.  See [bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind "MSDN Bind") for more info.
 
 Save and check your page. Now your like button should work.
 
@@ -498,7 +497,7 @@ render() {
   return (
     <div>
       <h2>{this.props.tweet}</h2>
-      <button onClick={this.buttonOnClick}>
+      <button onClick={this.incrementLike}>
         <span role="img" aria-label="Love">❤️</span> {numLike}
       </button>
     </div>
@@ -528,8 +527,8 @@ class App extends Component {
       currTweet: ''
     };
     this.tweetIndex = 0;
-    this.inputOnChange = (e) => { this.updateCurrTweet(e); };
-    this.buttonOnClick = () => { this.addTweet(); };
+    this.updateCurrTweet = this.updateCurrTweet.bind(this);
+    this.addTweet = this.addTweet.bind(this);
   }
 
   updateCurrTweet(event) {
@@ -563,8 +562,8 @@ class App extends Component {
     const lists = tweets.map((tweetObj) => <Tweet tweet={tweetObj.content} key={tweetObj.index} />);
     return (
       <div>
-        <input value={this.state.currTweet} onChange={this.inputOnChange}/>
-        <button onClick={this.buttonOnClick}>tweet</button>
+        <input value={this.state.currTweet} onChange={this.updateCurrTweet}/>
+        <button onClick={this.addTweet}>tweet</button>
         {lists}
       </div>
     );
@@ -572,8 +571,9 @@ class App extends Component {
 }
 ```
 
-Let's first look at `updateCurrTweet`. We passed `(e) => this.updateCurrTweet(e)` to `onChange` attribute of `input` tag. 
-Everytime we type in the input box, it calls the function and passes in an "event" object, which holds information about the "change" event.
+Let's first look at `updateCurrTweet`. In the constructor, we had to use the `bind` function. You use bind with handler functions (functions that respond to user actions). 
+If you would like to learn more about bind, you can look here: [bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind "MSDN: Bind"). We passed `this.updateCurrTweet` to the `onChange` attribute of `input` tag. 
+Every time we type in the input box, it calls the function and passes in an "event" object, which holds information about the "change" event.
 We can access the value of the event's target, which is the input box. 
 We take that value and put that in the state in `updateCurrTweet`. 
 
