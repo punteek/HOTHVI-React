@@ -6,7 +6,7 @@ class Tweet extends React.Component {
     this.state = {
       numLike: 0
     };
-    this.buttonOnClick = () => { this.incrementLike(); };
+    this.incrementLike = this.incrementLike.bind(this);
   }
 
   incrementLike() {
@@ -22,7 +22,7 @@ class Tweet extends React.Component {
     return (
       <div>
         <h2>{this.props.tweet}</h2>
-        <button onClick={this.buttonOnClick}>
+        <button onClick={this.incrementLike}>
           <span role="img" aria-label="Love">❤️</span> {numLike}
         </button>
       </div>
@@ -38,8 +38,8 @@ class App extends Component {
       currTweet: ''
     };
     this.tweetIndex = 0;
-    this.inputOnChange = (e) => { this.updateCurrTweet(e); };
-    this.buttonOnClick = () => { this.addTweet(); };
+    this.updateCurrTweet = this.updateCurrTweet.bind(this);
+    this.addTweet = this.addTweet.bind(this);
   }
 
   updateCurrTweet(event) {
@@ -73,8 +73,8 @@ class App extends Component {
     const lists = tweets.map((tweetObj) => <Tweet tweet={tweetObj.content} key={tweetObj.index} />);
     return (
       <div>
-        <input value={this.state.currTweet} onChange={this.inputOnChange}/>
-        <button onClick={this.buttonOnClick}>tweet</button>
+        <input value={this.state.currTweet} onChange={this.updateCurrTweet}/>
+        <button onClick={this.addTweet}>tweet</button>
         {lists}
       </div>
     );
