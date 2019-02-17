@@ -1,6 +1,6 @@
 # HOTH 6: Intro to Frontend
-**Location**: Carnesale Venice
-**Time**: 10:30-11:15am, February 17, 2019
+**Location**: Carnesale Hermosa (100)
+**Time**: 10:30-11:30am, February 17, 2019
 
 **Teacher**: Tim Rediehs
 
